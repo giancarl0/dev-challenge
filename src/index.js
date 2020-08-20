@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import * as serviceWorker from 'serviceWorker';
+import configureStore from 'redux/store';
+import theme from 'theme';
+import MainContainer from 'Components/container/MainContainer';
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={configureStore()}>
+    <ThemeProvider theme={theme}>
+      <MainContainer />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

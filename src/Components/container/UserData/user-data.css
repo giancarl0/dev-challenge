@@ -1,0 +1,11 @@
+#table-container {
+  overflow: auto;
+  max-width: 700px;
+  max-height: fit-content;
+  margin: 3em auto;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#csv-link {
+  text-decoration: none;
+}
